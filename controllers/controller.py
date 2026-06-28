@@ -41,6 +41,7 @@ class Controller(BaseController):
     return self._clip_action(self.prev_action + delta)
 
   def _pad(self, values, fallback, length):
+    #pads to desired length with last value or fallback if empty
     seq = list(values[:length]) if values else []
     if not seq:
       seq = [float(fallback)]
